@@ -4,13 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.csp</groupId>
+    <groupId>org.csp.rpc</groupId>
     <artifactId>rpc</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>remoting</module>
+        <module>registry</module>
+        <module>example</module>
+        <module>cluster</module>
+        <module>bootstrap</module>
+        <module>core</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <hutool.version>5.7.16</hutool.version>
+        <spring.version>5.2.8.RELEASE</spring.version>
+        <zookeeper.curator>4.2.0</zookeeper.curator>
+        <zookeeper.version>3.4.13</zookeeper.version>
+        <junit.version>4.12</junit.version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <rpc.framework.version>1.0-SNAPSHOT</rpc.framework.version>
     </properties>
 
 
