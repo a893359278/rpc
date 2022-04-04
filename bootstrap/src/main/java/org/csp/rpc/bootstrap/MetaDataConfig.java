@@ -5,6 +5,8 @@ import java.util.Objects;
 /**
  * config prefix rpc.metaData
  *
+ * dubbo application MetaData
+ *
  * @see org.csp.rpc.bootstrap.ConfigManager.ConfigKeyEnum#META_DATA
  */
 public class MetaDataConfig extends AbstractConfig {
@@ -30,6 +32,19 @@ public class MetaDataConfig extends AbstractConfig {
             this.port = 10086;
         } else {
             this.port = port;
+        }
+    }
+
+    public static class MetaDataConfigBuilder {
+        private MetaDataConfig metaDataConfig = new MetaDataConfig();
+
+        public MetaDataConfigBuilder port(Integer port) {
+            metaDataConfig.port = port;
+            return this;
+        }
+
+        public MetaDataConfig builder() {
+            return metaDataConfig;
         }
     }
 }

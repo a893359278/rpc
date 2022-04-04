@@ -10,7 +10,10 @@ public class NettyExchangeClient implements ExchangeClient {
     private Channel channel;
 
     public NettyExchangeClient(String host, int port) {
-        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig());
+        NettyClientConfig config = new NettyClientConfig();
+        config.setIp(host);
+        config.setPort(port);
+        NettyRemotingClient client = new NettyRemotingClient(config);
         client.connect();
         channel = client.getChannel();
     }

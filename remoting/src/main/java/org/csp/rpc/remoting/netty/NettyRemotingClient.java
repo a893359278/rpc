@@ -45,7 +45,7 @@ public class NettyRemotingClient implements RemotingClient {
                     @Override
                     public void initChannel(SocketChannel ch) throws Exception {
                         ChannelPipeline pipeline = ch.pipeline();
-                        pipeline.addLast(new IdleStateHandler(0 ,0, nettyClientConfig.getIdleTimeoutMillis(), TimeUnit.MILLISECONDS))
+                        pipeline.addLast(new IdleStateHandler(nettyClientConfig.getIdleTimeoutMillis() ,0, 0, TimeUnit.MILLISECONDS))
                                 .addLast(new MessageDecoder())
                                 .addLast(new MessageEncoder());
                     }

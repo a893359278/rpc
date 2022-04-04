@@ -137,4 +137,42 @@ public class ServiceConfig extends AbstractConfig {
                 '}';
     }
 
+    public static class ServiceConfigBuilder {
+
+        private ServiceConfig serviceConfig = new ServiceConfig();
+
+        public ServiceConfigBuilder reference(Class<?> reference) {
+            serviceConfig.reference = reference;
+            return this;
+        }
+
+        public ServiceConfigBuilder interfaceClass(Class<?> interfaceClass) {
+            serviceConfig.interfaceClass = interfaceClass;
+            return this;
+        }
+
+        public ServiceConfigBuilder interfaceName(String interfaceName) {
+            serviceConfig.interfaceName = interfaceName;
+            return this;
+        }
+
+        public ServiceConfigBuilder timeout(Integer timeout) {
+            serviceConfig.timeout = timeout;
+            return this;
+        }
+
+        public ServiceConfigBuilder retires(Integer retires) {
+            serviceConfig.retires = retires;
+            return this;
+        }
+
+        public ServiceConfigBuilder weight(Integer weight) {
+            serviceConfig.weight = weight;
+            return this;
+        }
+
+        public ServiceConfig builder() {
+            return serviceConfig;
+        }
+    }
 }

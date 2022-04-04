@@ -1,7 +1,7 @@
 //package org.csp.rpc.bootstrap.config.spring.context;
 //
 //import com.alibaba.fastjson.JSON;
-//import org.csp.rpc.bootstrap.HelloProviderTest;
+//import org.csp.rpc.example.HelloProviderTest;
 //import org.csp.rpc.bootstrap.NetUtils;
 //import org.csp.rpc.registry.api.Message;
 //import org.csp.rpc.registry.api.NodeMetaInfo;

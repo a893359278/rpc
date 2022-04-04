@@ -9,7 +9,7 @@ public class RegistryConfig extends AbstractConfig {
 
     /**
      * Multiple are separated by ,
-     * such as 127.0.0.1,192.168.0.1
+     * such as 127.0.0.1:2181,192.168.0.1:2181
      */
     private String host;
 
@@ -36,5 +36,18 @@ public class RegistryConfig extends AbstractConfig {
         return "RegistryConfig{" +
                 "host='" + host + '\'' +
                 '}';
+    }
+
+    public static class RegistryConfigBuilder {
+        private RegistryConfig registryConfig = new RegistryConfig();
+
+        public RegistryConfigBuilder host(String host) {
+            registryConfig.host = host;
+            return this;
+        }
+
+        public RegistryConfig builder() {
+            return registryConfig;
+        }
     }
 }

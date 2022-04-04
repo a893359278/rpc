@@ -29,10 +29,7 @@ public class RpcBootstrap {
     }
 
     private void init() {
-        initRegistryCenter();
-    }
 
-    private void initRegistryCenter() {
     }
 
     public void close() {

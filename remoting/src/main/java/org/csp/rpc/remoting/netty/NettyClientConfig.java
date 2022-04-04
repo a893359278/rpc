@@ -4,7 +4,7 @@ public class NettyClientConfig {
 
     private int connectTimeoutMillis = 3000;
 
-    private long idleTimeoutMillis = 3000;
+    private long idleTimeoutMillis = 60000;
     private int port = 28880;
     private String ip = "127.0.0.1";
 

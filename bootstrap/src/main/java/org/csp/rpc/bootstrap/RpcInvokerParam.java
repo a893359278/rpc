@@ -1,6 +1,10 @@
 package org.csp.rpc.bootstrap;
 
-public class RpcInvokerParam {
+import java.io.Serializable;
+
+public class RpcInvokerParam implements Serializable {
+
+    private static final long serialVersionUID = 3515962228886841564L;
 
     private String cls;
 

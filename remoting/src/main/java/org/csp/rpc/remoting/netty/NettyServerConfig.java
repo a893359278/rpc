@@ -7,7 +7,7 @@ public class NettyServerConfig {
     private boolean useEpoll = false;
     private int ioThread = Runtime.getRuntime().availableProcessors() + 1;
     private boolean keepAlive = false;
-    private long idleTimeoutMillis = 3000L;
+    private long idleTimeoutMillis = 180000L;
 
     private int port = 28880;
 
