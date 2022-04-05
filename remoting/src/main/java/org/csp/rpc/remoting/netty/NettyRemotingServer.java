@@ -9,6 +9,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
+import org.csp.rpc.core.extension.ExtensionLoader;
+import org.csp.rpc.remoting.api.ChannelHandler;
 import org.csp.rpc.remoting.api.RemotingServer;
 
 import java.util.concurrent.ThreadFactory;
@@ -72,6 +74,8 @@ public class NettyRemotingServer implements RemotingServer {
 
         serverBootstrap = new ServerBootstrap();
 
+        NettyServerHandler handler = new NettyServerHandler(ExtensionLoader.loadExtensionInfo(ChannelHandler.class).getDefault());
+
         serverBootstrap.group(eventLoopGroupBoss, eventLoopGroupWork)
                 .channel(nettyServerConfig.useEpoll() ? EpollServerSocketChannel.class : NioServerSocketChannel.class)
                 .option(ChannelOption.SO_KEEPALIVE, nettyServerConfig.getKeepAlive())
@@ -85,7 +89,8 @@ public class NettyRemotingServer implements RemotingServer {
                         ChannelPipeline pipeline = ch.pipeline();
                         pipeline.addLast(new IdleStateHandler(0 ,0, nettyServerConfig.getIdleTimeoutMillis(), TimeUnit.MILLISECONDS))
                                 .addLast(new MessageDecoder())
-                                .addLast(new MessageEncoder());
+                                .addLast(new MessageEncoder())
+                                .addLast(handler);
                     }
                 });
 

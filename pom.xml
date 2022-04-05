@@ -15,6 +15,7 @@
         <module>cluster</module>
         <module>bootstrap</module>
         <module>core</module>
+        <module>common</module>
     </modules>
 
     <properties>

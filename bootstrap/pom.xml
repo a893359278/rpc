@@ -37,6 +37,11 @@
             <version>${rpc.framework.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.csp.rpc</groupId>
+            <artifactId>common</artifactId>
+            <version>${rpc.framework.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>

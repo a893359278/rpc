@@ -3,6 +3,7 @@ package org.csp.rpc.bootstrap;
 
 import org.csp.rpc.remoting.api.ExchangeClient;
 import org.csp.rpc.remoting.api.NettyExchangeClient;
+import org.csp.rpc.remoting.handler.RpcInvokerParam;
 
 public class DefaultInvoker<T> implements Invoker<T> {
 

@@ -2,7 +2,7 @@
 //
 //import com.alibaba.fastjson.JSON;
 //import org.csp.rpc.example.HelloProviderTest;
-//import org.csp.rpc.bootstrap.NetUtils;
+//import org.csp.rpc.common.NetUtils;
 //import org.csp.rpc.registry.api.Message;
 //import org.csp.rpc.registry.api.NodeMetaInfo;
 //import org.csp.rpc.registry.zk.ZooKeeperRegistryCenter;

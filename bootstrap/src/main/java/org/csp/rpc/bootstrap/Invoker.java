@@ -1,6 +1,8 @@
 package org.csp.rpc.bootstrap;
 
 
+import org.csp.rpc.remoting.handler.RpcInvokerParam;
+
 public interface Invoker<T> {
     /**
      * 获取代理的接口对象

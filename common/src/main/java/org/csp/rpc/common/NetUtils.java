@@ -1,5 +1,7 @@
-package org.csp.rpc.bootstrap;
+package org.csp.rpc.common;
 
+
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 
 import java.io.IOException;
@@ -9,7 +11,6 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 import static java.util.Collections.emptyList;
-import static org.springframework.util.ObjectUtils.isEmpty;
 
 /**
  * 源码来自 dubbo NetUtils
@@ -214,7 +215,7 @@ public class NetUtils {
     }
 
     private static <T> T first(Collection<T> values) {
-        if (isEmpty(values)) {
+        if (ObjectUtil.isEmpty(values)) {
             return null;
         }
         if (values instanceof List) {

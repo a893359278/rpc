@@ -1,5 +1,7 @@
 package org.csp.rpc.bootstrap;
 
+import org.csp.rpc.remoting.handler.RpcInvokerParam;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 

@@ -1,6 +1,7 @@
-package org.csp.rpc.bootstrap;
+package org.csp.rpc.remoting.handler;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class RpcInvokerParam implements Serializable {
 
@@ -51,5 +52,16 @@ public class RpcInvokerParam implements Serializable {
 
     public void setParameters(Class<?>[] parameters) {
         this.parameters = parameters;
+    }
+
+
+    @Override
+    public String toString() {
+        return "RpcInvokerParam{" +
+                "cls='" + cls + '\'' +
+                ", method='" + method + '\'' +
+                ", parameters=" + Arrays.toString(parameters) +
+                ", args=" + Arrays.toString(args) +
+                '}';
     }
 }

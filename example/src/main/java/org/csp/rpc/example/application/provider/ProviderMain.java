@@ -1,7 +1,9 @@
 package org.csp.rpc.example.application.provider;
 
 import org.csp.rpc.bootstrap.*;
+import org.csp.rpc.core.registry.ServiceRegistry;
 import org.csp.rpc.example.api.HelloService;
+import org.csp.rpc.example.spring.provider.HelloProviderTestImpl;
 import org.csp.rpc.remoting.netty.NettyRemotingServer;
 import org.csp.rpc.remoting.netty.NettyServerConfig;
 
@@ -27,6 +29,8 @@ public class ProviderMain {
                 new MetaDataConfig.MetaDataConfigBuilder()
                 .port(20011)
                 .builder());
+
+        ServiceRegistry.getInstance().registry(new HelloProviderTestImpl());
 
         RpcBootstrap.getInstance().start();
 

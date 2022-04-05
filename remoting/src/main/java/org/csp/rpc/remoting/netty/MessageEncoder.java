@@ -62,7 +62,5 @@ public class MessageEncoder extends MessageToByteEncoder {
         os.close();
 
         out.writeBytes(bytes);
-
-        System.out.println("encoder  11");
     }
 }
